@@ -3,6 +3,7 @@ package ma.edeliver.edeliverbackend.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,11 +16,10 @@ import ma.edeliver.edeliverbackend.entity.Utilisateur;
 import ma.edeliver.edeliverbackend.service.AuthenticationService;
 import ma.edeliver.edeliverbackend.service.JwtService;
 
-@RequestMapping("/auth")
 @RestController
+@RequestMapping("/auth")
 public class AuthenticationController {
     private final JwtService jwtService;
-    
     private final AuthenticationService authenticationService;
 
     public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService) {
@@ -27,23 +27,22 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<Utilisateur> register(@RequestBody RegisterUserDTO registerUserDto) {
-        Utilisateur registeredUser = authenticationService.signup(registerUserDto);
-
-        return ResponseEntity.ok(registeredUser);
-    }
-
     @PostMapping("/login")
-    public ResponseEntity<Map<String, Object>> authenticate(@RequestBody LoginUserDTO loginUserDto) {
-        Utilisateur authenticatedUser = authenticationService.authenticate(loginUserDto);
+    public ResponseEntity<Map<String, String>> authenticate(@RequestBody LoginUserDTO loginUserDto) {
+        try {
+            Utilisateur authenticatedUser = authenticationService.authenticate(loginUserDto);
+            String jwtToken = jwtService.generateToken(authenticatedUser);
 
-        String jwtToken = jwtService.generateToken(authenticatedUser);
+            Map<String, String> response = new HashMap<>();
+            response.put("token", jwtToken);
+            response.put("message", "Authentification réussie");
+            return ResponseEntity.ok(response);
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("token", jwtToken);
-        response.put("expiresIn", jwtService.getExpirationTime());
-
-        return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException e) {
+            // Si l'email n'est pas trouvé ou si le mot de passe est incorrect
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", e.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
+        }
     }
 }
