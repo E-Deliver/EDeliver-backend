@@ -13,42 +13,24 @@ import ma.edeliver.edeliverbackend.repository.UtilisateurRepository;
 @Service
 public class AuthenticationService {
     private final UtilisateurRepository utilisateurRepository;
-    
     private final PasswordEncoder passwordEncoder;
-    
-    private final AuthenticationManager authenticationManager;
 
-    public AuthenticationService(
-        UtilisateurRepository utilisateurRepository,
-        AuthenticationManager authenticationManager,
-        PasswordEncoder passwordEncoder
-    ) {
-        this.authenticationManager = authenticationManager;
+    public AuthenticationService(UtilisateurRepository utilisateurRepository, PasswordEncoder passwordEncoder) {
         this.utilisateurRepository = utilisateurRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Utilisateur signup(RegisterUserDTO input) {
-        Utilisateur utilisateur = new Utilisateur();
-        
-        utilisateur.setNom(input.getNom());
-        utilisateur.setEmail(input.getEmail());
-
-        String motDePasseHache = passwordEncoder.encode(input.getMotDePasse());
-        utilisateur.setMotDePasse(motDePasseHache);
-        
-        return utilisateurRepository.save(utilisateur);
-    }    
-
     public Utilisateur authenticate(LoginUserDTO input) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        input.getEmail(),
-                        input.getMotDePasse()
-                )
-        );
+        // Vérifie si l'utilisateur existe par email
+        Utilisateur utilisateur = utilisateurRepository.findByEmail(input.getEmail())
+            .orElseThrow(() -> new IllegalArgumentException("Email non trouvé"));
 
-        return utilisateurRepository.findByEmail(input.getEmail())
-                .orElseThrow();
+        // Vérifie si le mot de passe est correct
+        if (!passwordEncoder.matches(input.getMotDePasse(), utilisateur.getMotDePasse())) {
+            throw new IllegalArgumentException("Mot de passe incorrect");
+        }
+
+        // Si tout est correct, retourne l'utilisateur authentifié
+        return utilisateur;
     }
 }
