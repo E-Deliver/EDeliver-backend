@@ -28,21 +28,25 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> authenticate(@RequestBody LoginUserDTO loginUserDto) {
+    public ResponseEntity<Map<String, Object>> authenticate(@RequestBody LoginUserDTO loginUserDto) {
         try {
             Utilisateur authenticatedUser = authenticationService.authenticate(loginUserDto);
             String jwtToken = jwtService.generateToken(authenticatedUser);
 
-            Map<String, String> response = new HashMap<>();
+            // Préparer la réponse avec les données utilisateur et le token
+            Map<String, Object> response = new HashMap<>();
             response.put("token", jwtToken);
             response.put("message", "Authentification réussie");
+            response.put("user", authenticatedUser); // Ajouter les données utilisateur
+
             return ResponseEntity.ok(response);
 
         } catch (IllegalArgumentException e) {
-            // Si l'email n'est pas trouvé ou si le mot de passe est incorrect
-            Map<String, String> errorResponse = new HashMap<>();
+            // Utiliser Map<String, Object> pour l'erreur aussi
+            Map<String, Object> errorResponse = new HashMap<>();
             errorResponse.put("error", e.getMessage());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
         }
     }
+
 }
