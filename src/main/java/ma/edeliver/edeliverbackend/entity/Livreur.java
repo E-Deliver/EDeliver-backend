@@ -10,7 +10,7 @@ import lombok.Setter;
 @Entity
 public class Livreur extends Utilisateur {
 
-  private Long id_Livreur;
+  // private Long id_Livreur;
 
   private String localisation;
   @Getter

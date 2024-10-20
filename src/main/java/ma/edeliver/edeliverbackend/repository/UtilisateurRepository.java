@@ -12,4 +12,6 @@ import ma.edeliver.edeliverbackend.entity.Utilisateur;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
     // Recherche par email
     Optional<Utilisateur> findByEmail(String email);
+
+    boolean existsByEmail(String email);
 }

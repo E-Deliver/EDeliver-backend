@@ -10,4 +10,9 @@ public class RegisterUserDTO {
     private String email;
     private String motDePasse; 
     private Role role;
+    private String localisation;
+    public String getLocalisation() {
+        // TODO Auto-generated method stub
+        return localisation;
+    }
 }
