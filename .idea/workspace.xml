@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1412060e-bd27-49a7-82e3-235ad2c04716" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/EDeliverBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/EDeliverBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/ApplicationConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/LivreurDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/LivreurDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/LoginUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/LoginUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/RegisterUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/RegisterUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/UtilisateurDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/dto/UtilisateurDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/repository/LivreurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/repository/LivreurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/repository/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/repository/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ma/edeliver/edeliverbackend/EDeliverBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ma/edeliver/edeliverbackend/EDeliverBackendApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/EDeliverBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/EDeliverBackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/ApplicationConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/ApplicationConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/CorsConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/CorsConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/CorsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/config/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LivreurDTO$EtatLivreur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LivreurDTO$EtatLivreur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LivreurDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LivreurDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LoginUserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/LoginUserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/RegisterUserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/RegisterUserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/UtilisateurDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/dto/UtilisateurDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Commande.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Commande.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Livreur$EtatLivreur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Livreur$EtatLivreur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Livreur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Livreur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/repository/LivreurRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/repository/LivreurRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/repository/UtilisateurRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/repository/UtilisateurRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/RegistrationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ma/edeliver/edeliverbackend/EDeliverBackendApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ma/edeliver/edeliverbackend/EDeliverBackendApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2niCnc58FGOY8uoRnVyL10QiecK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Database Script.data.sql.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.EDeliverBackendApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PC DOCTOR/Documents/Edeliver/EDeliver-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "database.query.execution",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "7f2d51bf-543e-42df-880e-6d7184ae108e"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.EDeliverBackendApplication">
+    <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/data.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="7f2d51bf-543e-42df-880e-6d7184ae108e" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EDeliverBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="EDeliver-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ma.edeliver.edeliverbackend.EDeliverBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.data.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1412060e-bd27-49a7-82e3-235ad2c04716" name="Changes" comment="" />
+      <created>1729446680083</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729446680083</updated>
+      <workItem from="1729446683008" duration="3746000" />
+      <workItem from="1729499303785" duration="1524000" />
+      <workItem from="1729502898195" duration="7173000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
