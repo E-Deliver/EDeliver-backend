@@ -14,7 +14,7 @@ public class Loginlivreur extends TestBase{
         email.sendKeys("test@gmail.com");
         WebElement pwd=wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathPassword));
         //WebElement pwd = driver.findElement(Project_Xpath.xpathPassword);
-        pwd.sendKeys("test");
+        pwd.sendKeys("123");
         driver.findElement(Project_Xpath.xpathConnect).click();
         wait.until(ExpectedConditions.urlToBe(Parameters.UrlDashLivreurPage));
 
