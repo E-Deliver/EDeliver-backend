@@ -13,37 +13,33 @@ import java.util.List;
 @RequestMapping("/api/commandes")
 public class CommandeController {
 
-  @Autowired
-  private CommandeService commandeService;
+    @Autowired
+    private CommandeService commandeService;
 
-  // Get all commandes
-  @GetMapping
-  public List<Commande> getAllCommandes() {
-    return commandeService.getAllCommandes();
-  }
-
-  // Get a single commande by ID
-  @GetMapping("/{id}")
-  public Commande getCommandeById(@PathVariable Long id) {
-    return commandeService.getCommandeById(id);
-  }
-
-  //Affecter une commande à un livreur
-  @PutMapping("/{commandeId}/assigner/{livreurId}")
-  public ResponseEntity<String> assignerLivreur(@PathVariable Long commandeId, @PathVariable Long livreurId) {
-    try {
-      commandeService.assignerCommandeALivreur(commandeId, livreurId);
-      return ResponseEntity.ok("Commande assignée avec succès au livreur");
-    } catch (IllegalArgumentException e) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    @GetMapping
+    public List<Commande> getAllCommandes() {
+        return commandeService.getAllCommandes();
     }
-  }
 
-  // Récupérer les commandes assignées à un livreur
+    @GetMapping("/{id}")
+    public Commande getCommandeById(@PathVariable Long id) {
+        return commandeService.getCommandeById(id);
+    }
 
-  @GetMapping("/livreur/{livreurId}")
-  public ResponseEntity<List<Commande>> getCommandesPourLivreur(@PathVariable Long livreurId) {
-    List<Commande> commandes = commandeService.getCommandesByLivreurId(livreurId);
-    return ResponseEntity.ok(commandes);
-  }
+    // Méthode pour affecter un livreur à une commande
+    @PutMapping("/{commandeId}/assigner/{livreurId}")
+    public ResponseEntity<String> assignerLivreur(@PathVariable Long commandeId, @PathVariable Long livreurId) {
+        try {
+            commandeService.assignerCommandeALivreur(commandeId, livreurId);
+            return ResponseEntity.ok("Commande assignée avec succès au livreur");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/livreur/{livreurId}")
+    public ResponseEntity<List<Commande>> getCommandesPourLivreur(@PathVariable Long livreurId) {
+        List<Commande> commandes = commandeService.getCommandesByLivreurId(livreurId);
+        return ResponseEntity.ok(commandes);
+    }
 }

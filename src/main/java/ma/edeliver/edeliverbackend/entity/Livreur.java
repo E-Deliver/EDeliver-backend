@@ -23,4 +23,3 @@ public class Livreur extends Utilisateur {
   }
 
 }
-
