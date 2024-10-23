@@ -19,6 +19,5 @@ public class Client extends Utilisateur {
 
   private String telephone;
 
-  private String email;
 }
 
