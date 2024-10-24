@@ -27,7 +27,24 @@ public class CommandeController {
     }
 
     // Méthode pour affecter un livreur à une commande
-    @PutMapping("/{commandeId}/assigner/{livreurId}")
+    /*@PutMapping("/{commandeId}/assigner/{livreurId}")
+    public ResponseEntity<String> assignerLivreur(@PathVariable Long commandeId, @PathVariable Long livreurId) {
+        try {
+            commandeService.assignerCommandeALivreur(commandeId, livreurId);
+            return ResponseEntity.ok("Commande assignée avec succès au livreur");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }*/
+
+    @GetMapping("/livreur/{livreurId}")
+    public ResponseEntity<List<Commande>> getCommandesPourLivreur(@PathVariable Long livreurId) {
+        List<Commande> commandes = commandeService.getCommandesByLivreurId(livreurId);
+        return ResponseEntity.ok(commandes);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "/{commandeId}/assigner/{livreurId}", method = {RequestMethod.PUT, RequestMethod.OPTIONS})
     public ResponseEntity<String> assignerLivreur(@PathVariable Long commandeId, @PathVariable Long livreurId) {
         try {
             commandeService.assignerCommandeALivreur(commandeId, livreurId);
@@ -37,9 +54,4 @@ public class CommandeController {
         }
     }
 
-    @GetMapping("/livreur/{livreurId}")
-    public ResponseEntity<List<Commande>> getCommandesPourLivreur(@PathVariable Long livreurId) {
-        List<Commande> commandes = commandeService.getCommandesByLivreurId(livreurId);
-        return ResponseEntity.ok(commandes);
-    }
 }
