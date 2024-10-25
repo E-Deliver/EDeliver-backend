@@ -1,5 +1,6 @@
 package ma.edeliver.edeliverbackend.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,5 +14,8 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
     // Recherche par email
     Optional<Utilisateur> findByEmail(String email);
 
-    boolean existsByEmail(String email);
+  boolean existsByEmail(String email);
+
+  // Find users by their role
+  List<Utilisateur> findByRole(Utilisateur.Role role);
 }
