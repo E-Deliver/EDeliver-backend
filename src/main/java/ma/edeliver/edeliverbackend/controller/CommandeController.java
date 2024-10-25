@@ -2,12 +2,14 @@ package ma.edeliver.edeliverbackend.controller;
 
 import ma.edeliver.edeliverbackend.entity.Commande;
 import ma.edeliver.edeliverbackend.service.CommandeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/commandes")
@@ -52,6 +54,13 @@ public class CommandeController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+    }
+
+    @PutMapping("/{id}/status")
+    public ResponseEntity<?> updateCommandeStatus(@PathVariable Long id, @RequestBody Map<String, String> statusUpdate) {
+        String newStatus = statusUpdate.get("statut");
+        commandeService.updateStatus(id, newStatus);
+        return ResponseEntity.ok("Statut mis à jour avec succès");
     }
 
 }

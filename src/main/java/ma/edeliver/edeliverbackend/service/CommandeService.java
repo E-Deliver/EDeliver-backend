@@ -49,6 +49,10 @@ public class CommandeService {
 
   }
 
-
+  public void updateStatus(Long id, String newStatus) {
+    Commande commande = commandeRepository.findById(id).orElseThrow();
+    commande.setStatut("Livrée");
+    commandeRepository.save(commande);
+  }
 
 }
