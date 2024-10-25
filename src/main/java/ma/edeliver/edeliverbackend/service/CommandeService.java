@@ -39,6 +39,7 @@ public class CommandeService {
             .orElseThrow(() -> new IllegalArgumentException("Livreur introuvable"));
 
     commande.setLivreur(livreur);  // Assigner le livreur à la commande
+    commande.setStatut("En cours");
     return commandeRepository.save(commande);  // Sauvegarder la commande avec le livreur assigné
   }
 
