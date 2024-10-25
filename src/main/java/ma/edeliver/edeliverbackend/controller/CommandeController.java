@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.*;
 
 @RestController
@@ -61,6 +60,15 @@ public class CommandeController {
         String newStatus = statusUpdate.get("statut");
         commandeService.updateStatus(id, newStatus);
         return ResponseEntity.ok("Statut mis à jour avec succès");
+    }
+
+    // Dans CommandeController
+    @GetMapping("/client/{clientId}/status/{statut}")
+    public ResponseEntity<List<Commande>> getCommandesByClientIdAndStatus(
+            @PathVariable Long clientId, 
+            @PathVariable String statut) {
+        List<Commande> commandes = commandeService.getCommandesByClientIdAndStatus(clientId, statut);
+        return ResponseEntity.ok(commandes);
     }
 
 }
