@@ -10,4 +10,6 @@ import java.util.List;
 public interface CommandeRepository extends JpaRepository<Commande, Long> {
   // You can add custom query methods if needed.
   List<Commande> findByLivreurId(Long livreurId);
+
+  List<Commande> findByClientIdAndStatut(Long clientId, String statut);
 }
