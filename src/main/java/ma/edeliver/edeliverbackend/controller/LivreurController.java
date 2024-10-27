@@ -21,4 +21,8 @@ public class LivreurController {
     public List<Livreur> getLivreursDisponibles() {
         return livreurService.findLivreursByEtat(Livreur.EtatLivreur.DISPONIBLE);
     }
+  @GetMapping
+  public List<Livreur> getAllLivreurs() {
+    return livreurService.findAllLivreurs();
+  }
 }

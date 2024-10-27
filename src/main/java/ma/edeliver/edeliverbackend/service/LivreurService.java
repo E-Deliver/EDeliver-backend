@@ -18,4 +18,7 @@ public class LivreurService {
     public List<Livreur> findLivreursByEtat(Livreur.EtatLivreur etat) {
         return livreurRepository.findByEtat(etat);
     }
+  public List<Livreur> findAllLivreurs() {
+    return livreurRepository.findAll();
+  }
 }

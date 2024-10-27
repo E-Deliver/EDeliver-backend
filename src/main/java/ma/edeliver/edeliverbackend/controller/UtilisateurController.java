@@ -5,10 +5,7 @@ import ma.edeliver.edeliverbackend.service.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,23 @@ public class UtilisateurController {
     }
     List<Utilisateur> utilisateurs = utilisateurService.getUtilisateursByRole(role);
     return ResponseEntity.ok(utilisateurs);
+  }
+  @PutMapping("/profile")
+  public ResponseEntity<Utilisateur> updateUserProfile(@RequestBody Utilisateur updatedUtilisateur, Authentication authentication) {
+    String email = authentication.getName();
+    Utilisateur utilisateur = utilisateurService.getUtilisateurByEmail(email);
+
+    if (utilisateur == null) {
+      return ResponseEntity.notFound().build();
+    }
+
+    utilisateur.setNom(updatedUtilisateur.getNom());
+
+    utilisateur.setEmail(updatedUtilisateur.getEmail());
+    utilisateur.setMotDePasse(updatedUtilisateur.getMotDePasse()); // Note: Hash the password if needed
+    // Update any other fields you want to allow the user to edit
+
+    utilisateurService.saveUtilisateur(utilisateur); // Save updated utilisateur
+    return ResponseEntity.ok(utilisateur);
   }
 }

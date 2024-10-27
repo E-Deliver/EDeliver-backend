@@ -18,7 +18,9 @@ public class UtilisateurService {
     return utilisateurRepository.findByEmail(email)
       .orElseThrow(() -> new UsernameNotFoundException("User not found"));
   }
-
+  public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
+    return utilisateurRepository.save(utilisateur);
+  }
   // Add a method to get user details based on their role
   public List<Utilisateur> getUtilisateursByRole(Utilisateur.Role role) {
     return utilisateurRepository.findByRole(role);
