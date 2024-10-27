@@ -35,4 +35,9 @@ public class Commande {
   @ManyToOne
   @JoinColumn(name = "client_id")  // Specify the join column name
   private Client client;
+
+  // Getter pour le nom du livreur
+  public String getLivreurNom() {
+    return (livreur != null) ? livreur.getNom() : null;
+  }
 }

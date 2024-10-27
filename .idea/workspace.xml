@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1412060e-bd27-49a7-82e3-235ad2c04716" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/LivreurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/LivreurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/UtilisateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/LivreurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/LivreurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/UtilisateurService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +112,7 @@
       <workItem from="1729499303785" duration="1524000" />
       <workItem from="1729502898195" duration="7173000" />
       <workItem from="1729609262260" duration="6611000" />
+      <workItem from="1730037614644" duration="368000" />
     </task>
     <servers />
   </component>
