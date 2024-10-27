@@ -1,14 +1,21 @@
 package ma.edeliver.edeliverbackend.service;
 
+import ma.edeliver.edeliverbackend.entity.Client;
 import ma.edeliver.edeliverbackend.entity.Commande;
 import ma.edeliver.edeliverbackend.repository.CommandeRepository;
 import ma.edeliver.edeliverbackend.repository.LivreurRepository;
+import ma.edeliver.edeliverbackend.repository.NotificationRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ma.edeliver.edeliverbackend.entity.Livreur;
+import ma.edeliver.edeliverbackend.entity.Notification;
 
-
+import java.util.Date;
 import java.util.List;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class CommandeService {
@@ -26,6 +33,9 @@ public class CommandeService {
     return commandeRepository.findById(id).orElse(null);
   }
 
+  @Autowired
+  private NotificationRepository notificationRepository;
+
   // Affecter une commande à un livreur
   @Autowired
   private LivreurRepository livreurRepository;
@@ -40,6 +50,18 @@ public class CommandeService {
 
     commande.setLivreur(livreur);  // Assigner le livreur à la commande
     commande.setStatut("En cours");
+
+    LocalDateTime currentDateTime = LocalDateTime.now();
+    Long idCommande = commande.getIdCommande();
+    Client client = commande.getClient();
+
+    Notification notification = new Notification();
+    notification.setDateEnvoi(currentDateTime);
+    notification.setMessage("Votre commande No. " + idCommande + " est en cours de livraison.");
+    notification.setClient(client);
+
+    notificationRepository.save(notification);
+
     return commandeRepository.save(commande);  // Sauvegarder la commande avec le livreur assigné
   }
 
@@ -51,8 +73,23 @@ public class CommandeService {
 
   public void updateStatus(Long id, String newStatus) {
     Commande commande = commandeRepository.findById(id).orElseThrow();
+
+    Long idCommande = commande.getIdCommande();
+    Client client = commande.getClient();
+
     commande.setStatut("Livrée");
     commandeRepository.save(commande);
+
+    LocalDateTime currentDateTime = LocalDateTime.now();
+    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    // String datetimeStamp = currentDateTime.format(formatter);
+
+    Notification notification = new Notification();
+    notification.setDateEnvoi(currentDateTime);
+    notification.setMessage("Votre commande No. " + idCommande + " est désormais livrée avec succès !");
+    notification.setClient(client);
+
+    notificationRepository.save(notification);
   }
 
   // Dans CommandeService
