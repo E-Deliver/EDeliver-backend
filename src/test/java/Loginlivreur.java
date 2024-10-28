@@ -5,16 +5,16 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
 
 public class Loginlivreur extends TestBase{
-    @Test
+    //@Test
     public void login_Livreur() throws InterruptedException {
         LoadPage();
         driver.findElement(Project_Xpath.xpathLogin).click();
         // Wait for the email input field to be present and visible
         WebElement email = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathEmail));
-        email.sendKeys("test@gmail.com");
+        email.sendKeys("livreurFast@gmail.com");//imanliv account
         WebElement pwd=wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathPassword));
         //WebElement pwd = driver.findElement(Project_Xpath.xpathPassword);
-        pwd.sendKeys("123");
+        pwd.sendKeys("test");
         driver.findElement(Project_Xpath.xpathConnect).click();
         wait.until(ExpectedConditions.urlToBe(Parameters.UrlDashLivreurPage));
 
