@@ -9,5 +9,10 @@ public class Parameters {
     public static String UrlLivreurCmd="http://localhost:4200/commandes-livreur";
     //**********Historique pour Livreur******************
     public static String UrlLivreurHistorique="http://localhost:4200/historique-livreur";
+    //**********Home page********************************
+    public static String UrlHomePage="http://localhost:4200/";
+    //**********Client Process*************************
+    public static String UrlClientCommande="http://localhost:4200/commandes-client";
+    public static String UrlClientHistorique="http://localhost:4200/historique-client";
     //*****************
 }
