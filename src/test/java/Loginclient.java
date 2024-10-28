@@ -11,7 +11,7 @@ public class Loginclient extends TestBase{
         driver.findElement(Project_Xpath.xpathLogin).click();
         // Wait for the email input field to be present and visible
         WebElement email = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathEmail));
-        email.sendKeys("client1@gmail.com");
+        email.sendKeys("clientTest@gmail.com");
         WebElement pwd = driver.findElement(Project_Xpath.xpathPassword);
         pwd.sendKeys("test");
         WebElement connect = driver.findElement(Project_Xpath.xpathConnect);
