@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) 
+@Inheritance(strategy = InheritanceType.JOINED)
 
 public class Utilisateur implements UserDetails{
 
@@ -23,49 +23,54 @@ public class Utilisateur implements UserDetails{
   private String nom;
 
   private String email;
+  private String address;
 
+
+  private String photo;
   private String motDePasse;
 
   @Enumerated(EnumType.STRING)
   private Role role;
 
+
+
   public enum Role {
     ADMINISTRATEUR, LIVREUR, CLIENT
   }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return List.of();
+  }
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
+  @Override
+  public String getUsername() {
+    return email;
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
 
-    @Override
-    public String getPassword() {
-      return motDePasse;
-    }
+  @Override
+  public String getPassword() {
+    return motDePasse;
+  }
 
 }

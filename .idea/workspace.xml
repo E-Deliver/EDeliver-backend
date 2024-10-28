@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1412060e-bd27-49a7-82e3-235ad2c04716" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/LivreurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/LivreurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/controller/UtilisateurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/LivreurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/LivreurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/service/UtilisateurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ma/edeliver/edeliverbackend/entity/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/LivreurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/LivreurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/UtilisateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/controller/UtilisateurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/entity/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/LivreurService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/LivreurService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/UtilisateurService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ma/edeliver/edeliverbackend/service/UtilisateurService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Loginadmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Loginadmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Loginlivreur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Loginlivreur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Parameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Project_Xpath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Project_Xpath.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +122,7 @@
       <workItem from="1729502898195" duration="7173000" />
       <workItem from="1729609262260" duration="6611000" />
       <workItem from="1730037614644" duration="368000" />
+      <workItem from="1730120343738" duration="5136000" />
     </task>
     <servers />
   </component>
