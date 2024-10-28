@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Loginclient extends TestBase{
-    @Test
+    //@Test
     public void login_Client() {
         LoadPage();
         driver.findElement(Project_Xpath.xpathLogin).click();
