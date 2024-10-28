@@ -24,7 +24,7 @@ public class AdminCommande extends Loginadmin{
     }
 
 @Test(priority=2)
-    public void AssignerLivreur(){
+    public void AssignerLivreur() throws InterruptedException {
         WebElement choisirLivreur = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathchoisirLivreur));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", choisirLivreur);
 
@@ -46,7 +46,9 @@ public class AdminCommande extends Loginadmin{
             System.out.println("Test Passed: Un Livreur disponible est bien assigné au commande!");
         }
         //Click on ok
-        WebElement OK=driver.findElement(Project_Xpath.xpath_OK_Assignation);
+    Thread.sleep(1000);
+    WebElement OK= wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpath_OK_Assignation));
+        //WebElement OK=driver.findElement(Project_Xpath.xpath_OK_Assignation);
         OK.click();
        // softAssert.assertAll();
 }
@@ -79,14 +81,24 @@ public void ConsulterHistoriqueAdmin(){
         System.out.println("Test Passed: L'historique est bien consulté par l'administrateur!");
     }
 }
-@Test(priority=5)
-    public void ConsulterClientAdmin(){
+//@Test(priority=5)
+    public void ConsulterClientParAdmin(){
     //Main Code
 
 }
-@Test(priority=6)
+//@Test(priority=6)
     public void ProfileAdmin(){
 
+}
+//****************Se déconnecter de l'aspace admin*****************************
+@Test(priority=7)
+public void SeDeconnecter(){
+    WebElement Logout=driver.findElement(Project_Xpath.logoutAdmin);
+    Logout.click();
+    Assert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlHomePage),"L'admin n'a pas pu se déconnecter");
+    if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlHomePage)){
+        System.out.println("Test Passed: l'admin se déconnecte correctement");
+    }
 }
 
 }
