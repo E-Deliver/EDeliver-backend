@@ -21,6 +21,7 @@ public class Project_Xpath {
     //******************Gestion des commandes par admin**************************
     public static By xpathcmdadmin = By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[2]");
     public static By xpathSuccesCmdClick = By.xpath("//*[text()=\"Liste des commandes\"]");
+    public static By logoutAdmin=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[7]");
 
     //Assigner une commande à un Livreur disponible
     public static By xpathchoisirLivreur = By.xpath("//*[text()=\"Choisir livreur\"]");
@@ -50,4 +51,23 @@ public class Project_Xpath {
     public static By xpathHistoriqueLivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[3]");
 
     public static By xpathListeHistoriqueLivreur=By.xpath("//*[text()=\"Liste des commandes\"]");
+    public static By logoutlivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[6]");
+    public static By Xpath_confirmerLivraison=By.xpath("//*[text()=\"Confirmer\"]");
+    public static By xpathPopUpConfirmLivraison=By.xpath("//*[text()=\"Êtes-vous sûr ?\"]");
+
+    public static By xpathAnnulerLivraison=By.xpath("/html/body/div/div/div[6]/button[3]");
+
+    public static By Xpath_AccepterLivraison=By.xpath("/html/body/div/div/div[6]/button[1]");
+    public static By xpathsuccessacceptLivraison=By.xpath("//*[text()=\"Livrée!\"]");
+
+    public static By xpathokafteracceptlivraison=By.xpath("/html/body/div/div/div[6]/button[1]");
+    //public static By xpathCartLivreur=By.xpath("");
+    //********************Client Process********************************************
+    public static By xpathcommandes=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[2]");
+    public static By xpathcommandesclient=By.xpath("//*[text()=\"Liste des commandes\"]");
+    public static By Xpath_historiqueclient=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[3]");
+
+    public static By xpathHistoriqueclient=By.xpath("//*[text()=\"Liste des commandes\"]");
+    public static By logoutClient=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[5]");
+
 }
