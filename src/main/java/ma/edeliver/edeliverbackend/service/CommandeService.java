@@ -104,5 +104,12 @@ public class CommandeService {
                         .distinct()
                         .collect(Collectors.toList());
     }
+  public Long getTotalLivreeCommands() {
+    return commandeRepository.countLivreeCommands();
+  }
+
+  public Long getTotalNonLivreeCommands() {
+    return commandeRepository.countNonLivreeCommands();
+  }
 
 }

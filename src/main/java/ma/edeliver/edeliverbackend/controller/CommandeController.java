@@ -37,6 +37,13 @@ public class CommandeController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }*/
+    @GetMapping("/api/commandes/stats")
+    public Map<String, Long> getCommandeStats() {
+      Map<String, Long> stats = new HashMap<>();
+      stats.put("livree", commandeService.getTotalLivreeCommands());
+      stats.put("nonLivree", commandeService.getTotalNonLivreeCommands());
+      return stats;
+    }
 
     @GetMapping("/livreur/{livreurId}")
     public ResponseEntity<List<Commande>> getCommandesPourLivreur(@PathVariable Long livreurId) {
@@ -65,7 +72,7 @@ public class CommandeController {
     // Dans CommandeController
     @GetMapping("/client/{clientId}/status/{statut}")
     public ResponseEntity<List<Commande>> getCommandesByClientIdAndStatus(
-            @PathVariable Long clientId, 
+            @PathVariable Long clientId,
             @PathVariable String statut) {
         List<Commande> commandes = commandeService.getCommandesByClientIdAndStatus(clientId, statut);
         return ResponseEntity.ok(commandes);

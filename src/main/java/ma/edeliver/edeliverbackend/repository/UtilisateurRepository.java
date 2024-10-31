@@ -15,6 +15,7 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
     Optional<Utilisateur> findByEmail(String email);
 
   boolean existsByEmail(String email);
+  long countByRole(Utilisateur.Role role); // Method to count users by role
 
   // Find users by their role
   List<Utilisateur> findByRole(Utilisateur.Role role);
