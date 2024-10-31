@@ -9,6 +9,7 @@ import java.util.List;
 
 import ma.edeliver.edeliverbackend.entity.Commande;
 import ma.edeliver.edeliverbackend.entity.Notification;
+import ma.edeliver.edeliverbackend.service.CommandeService;
 import ma.edeliver.edeliverbackend.service.NotificationService;
 
 @RestController
@@ -18,6 +19,9 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
+    @Autowired
+    private CommandeService commandeService;
+
     @GetMapping
     public List<Notification> getAllNotifications() {
         return notificationService.getAllNotifications();
@@ -26,5 +30,11 @@ public class NotificationController {
     @GetMapping("/client")
     public List<Notification> getNotificationsByClientId(@RequestParam Long clientId) {
         return notificationService.getNotificationsByClientId(clientId);
+    }
+
+    @GetMapping("/livreur")
+    public List<Notification> getNotificationsForLivreur(@RequestParam Long livreurId) {
+        List<Long> clientIds = commandeService.getClientIdsByLivreurId(livreurId);
+        return notificationService.getNotificationsByClientIds(clientIds);
     }
 }

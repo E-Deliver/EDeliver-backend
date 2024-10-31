@@ -3,6 +3,7 @@ package ma.edeliver.edeliverbackend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import ma.edeliver.edeliverbackend.entity.Commande;
 import ma.edeliver.edeliverbackend.entity.Notification;
@@ -23,4 +24,9 @@ public class NotificationService {
         return notificationRepository.findByClientId(clientId);
     }
 
+    public List<Notification> getNotificationsByClientIds(List<Long> clientIds) {
+        return clientIds.stream()
+                        .flatMap(clientId -> notificationRepository.findByClientId(clientId).stream())
+                        .collect(Collectors.toList());
+    }
 }
