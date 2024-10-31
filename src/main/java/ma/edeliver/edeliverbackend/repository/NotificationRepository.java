@@ -9,4 +9,6 @@ import ma.edeliver.edeliverbackend.entity.Notification;
 
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
+    List<Notification> findByClientId(Long clientId);
+
 }

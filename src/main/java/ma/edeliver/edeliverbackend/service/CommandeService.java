@@ -13,7 +13,7 @@ import ma.edeliver.edeliverbackend.entity.Notification;
 
 import java.util.Date;
 import java.util.List;
-
+import java.util.stream.Collectors;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -96,5 +96,13 @@ public class CommandeService {
   public List<Commande> getCommandesByClientIdAndStatus(Long clientId, String statut) {
     return commandeRepository.findByClientIdAndStatut(clientId, statut);
   }
+
+  public List<Long> getClientIdsByLivreurId(Long livreurId) {
+        List<Commande> commandes = commandeRepository.findByLivreurId(livreurId);
+        return commandes.stream()
+                        .map(commande -> commande.getClient().getId())
+                        .distinct()
+                        .collect(Collectors.toList());
+    }
 
 }
