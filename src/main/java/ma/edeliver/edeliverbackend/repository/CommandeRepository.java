@@ -20,4 +20,7 @@ public interface CommandeRepository extends JpaRepository<Commande, Long> {
   @Query("SELECT COUNT(c) FROM Commande c WHERE c.statut != 'livrée'")
   Long countNonLivreeCommands();
   List<Commande> findByClientIdAndStatut(Long clientId, String statut);
+  List<Commande> findByAdresseLivraisonContaining(String address);
+  List<Commande> findByDateCommande(String date);
+  List<Commande> findByStatut(String status);
 }

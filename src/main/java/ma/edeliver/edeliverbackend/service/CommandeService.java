@@ -111,5 +111,15 @@ public class CommandeService {
   public Long getTotalNonLivreeCommands() {
     return commandeRepository.countNonLivreeCommands();
   }
-
+  public List<Commande> searchCommandes(String address, String date, String status) {
+    if (address != null && !address.isEmpty()) {
+      return commandeRepository.findByAdresseLivraisonContaining(address);
+    } else if (date != null && !date.isEmpty()) {
+      return commandeRepository.findByDateCommande(date);
+    } else if (status != null && !status.isEmpty()) {
+      return commandeRepository.findByStatut(status);
+    } else {
+      return getAllCommandes(); // Return all if no criteria provided
+    }
+  }
 }

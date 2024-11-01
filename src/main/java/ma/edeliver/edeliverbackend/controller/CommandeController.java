@@ -77,5 +77,12 @@ public class CommandeController {
         List<Commande> commandes = commandeService.getCommandesByClientIdAndStatus(clientId, statut);
         return ResponseEntity.ok(commandes);
     }
-
+  @GetMapping("/search")
+  public ResponseEntity<List<Commande>> searchCommandes(
+    @RequestParam(required = false) String address,
+    @RequestParam(required = false) String date,
+    @RequestParam(required = false) String status) {
+    List<Commande> commandes = commandeService.searchCommandes(address, date, status);
+    return ResponseEntity.ok(commandes);
+  }
 }
