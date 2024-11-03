@@ -22,9 +22,16 @@ class ClientServiceTest {
     @InjectMocks
     private ClientService clientService;
 
+    private Client client;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        client = new Client();
+        client.setId_client(1L);
+        client.setEmail("client@example.com");
+        client.setAdresse("123 Street");
+        client.setTelephone("1234567890");
     }
 
     @Test
@@ -40,7 +47,6 @@ class ClientServiceTest {
 
     @Test
     void getClientById_Found() {
-        Client client = new Client();
         when(clientRepository.findById(1L)).thenReturn(Optional.of(client));
 
         Optional<Client> result = clientService.getClientById(1L);
@@ -54,6 +60,25 @@ class ClientServiceTest {
         when(clientRepository.findById(1L)).thenReturn(Optional.empty());
 
         Optional<Client> result = clientService.getClientById(1L);
+
+        assertFalse(result.isPresent());
+    }
+
+    @Test
+    void getClientByEmail_Found() {
+        when(clientRepository.findByEmail("client@example.com")).thenReturn(Optional.of(client));
+
+        Optional<Client> result = clientService.getClientByEmail("client@example.com");
+
+        assertTrue(result.isPresent());
+        assertEquals("client@example.com", result.get().getEmail());
+    }
+
+    @Test
+    void getClientByEmail_NotFound() {
+        when(clientRepository.findByEmail("nonexistent@example.com")).thenReturn(Optional.empty());
+
+        Optional<Client> result = clientService.getClientByEmail("nonexistent@example.com");
 
         assertFalse(result.isPresent());
     }

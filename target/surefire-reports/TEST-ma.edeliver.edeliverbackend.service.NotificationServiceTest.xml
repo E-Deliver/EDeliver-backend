@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ma.edeliver.edeliverbackend.controller.AuthenticationControllerTest" time="7.931" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ma.edeliver.edeliverbackend.service.NotificationServiceTest" time="0.024" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -10,6 +10,7 @@
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Africa/Casablanca"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
     <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -30,6 +31,8 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
     <property name="surefire.real.class.path" value="C:\Users\DELL\AppData\Local\Temp\surefire4371655736275668058\surefirebooter-20241103153537098_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -43,11 +46,14 @@
     <property name="localRepository" value="C:\Users\DELL\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\DELL\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="17.0.1"/>
     <property name="user.dir" value="C:\Users\DELL\Desktop\STUDIES\5TH YEAR\PROJET JEE\E-Deliver\code source\First\EDeliver-backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="18080"/>
     <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
     <property name="native.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files\Git\cmd;C:\Users\DELL\Desktop\3RD YEAR\S2\theorie des langages et compilation\extracted folder;C:\Program Files\CodeBlocks\MinGW\bin;C:\Program Files\Dev-Cpp\MinGW64\bin;C:\Program Files\Dev-Cpp\MinGW64\x86_64-w64-mingw32\bin;C:\Program Files\Dev-Cpp\MinGW64\lib;C:\Program Files\Dev-Cpp\MinGW64\lib;C:\Program Files\Dev-Cpp\MinGW64\include;C:\Program Files\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include;C:\Program Files\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include;C:\Program Files\Dev-Cpp\bin;C:\Program Files\PuTTY\;C:\win_flex_bison3-latest;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\apache-maven-3.9.4\bin;C:\ProgramData\chocolatey\bin;C:\Users\DELL\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Users\DELL\AppData\Roaming\npm;C:\Users\DELL\Android\Sdk;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -55,17 +61,9 @@
     <property name="java.vm.version" value="17.0.1+12-LTS-39"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[EDeliver-backend] "/>
   </properties>
-  <testcase name="testAuthenticateSuccess" classname="ma.edeliver.edeliverbackend.controller.AuthenticationControllerTest" time="7.698">
-    <system-out><![CDATA[15:35:47.575 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-15:35:47.583 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-15:35:47.599 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 8 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testAuthenticateFailure" classname="ma.edeliver.edeliverbackend.controller.AuthenticationControllerTest" time="0.067">
-    <system-out><![CDATA[15:35:48.719 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
-15:35:48.720 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
-15:35:48.721 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
+  <testcase name="testGetNotificationsByClientId" classname="ma.edeliver.edeliverbackend.service.NotificationServiceTest" time="0.006"/>
+  <testcase name="testGetNotificationsByClientIds" classname="ma.edeliver.edeliverbackend.service.NotificationServiceTest" time="0.005"/>
+  <testcase name="testGetAllNotifications" classname="ma.edeliver.edeliverbackend.service.NotificationServiceTest" time="0.006"/>
 </testsuite>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ma.edeliver.edeliverbackend.repository.NotificationRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in ma.edeliver.edeliverbackend.repository.NotificationRepositoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.378 s -- in ma.edeliver.edeliverbackend.repository.NotificationRepositoryTest
