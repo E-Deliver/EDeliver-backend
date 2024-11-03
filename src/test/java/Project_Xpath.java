@@ -22,12 +22,13 @@ public class Project_Xpath {
     public static By xpathcmdadmin = By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[2]");
     public static By xpathSuccesCmdClick = By.xpath("//*[text()=\"Liste des commandes\"]");
     public static By logoutAdmin=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[7]");
+    public static By dashAdminXpath=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[1]");
 
     //Assigner une commande à un Livreur disponible
-    public static By xpathchoisirLivreur = By.xpath("//*[text()=\"Choisir livreur\"]");
+    public static By xpathchoisirLivreur = By.xpath("//*[text()=\" Choisir livreur \"]");
 
     public static By xpathPopUpAssigner = By.xpath("//*[text()=\"Choisir livreur\"]");
-    public static By xpathassignerLivreur = By.xpath("/html/body/div/div/div[6]/button[1]");
+    public static By xpathassignerLivreur = By.xpath("//*[text()=\"Assigner\"]");
     public static By xpathSuccessAssigner = By.xpath("//*[text()=\"Succès\"]");
 
     public static By xpathSelectLivreur= By.xpath("//*[@id=\"livreurForm\"]/label[34]/input");
@@ -45,12 +46,18 @@ public class Project_Xpath {
     public static By xpathHistorique=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[3]");
 
     public static By xpathListeHistorique=By.xpath("//*[text()=\"Liste des commandes\"]");
+//**********************Consultation Client par admin********************************************
+    public static By xpathClientAdmin=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[5]");
+    public static By xpathListeClient=By.xpath("//*[text()=\"Liste des Clients\"]");
+
 //*********************Espace de livreur*****************************************
     public static By xpathcommandeLivreur= By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[2]");
+    public static By dashxpathLivreur= By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[1]");
     public static By xpathListecmdLivreur=By.xpath("//*[text()=\"Liste des commandes\"]");
     public static By xpathHistoriqueLivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[3]");
 
     public static By xpathListeHistoriqueLivreur=By.xpath("//*[text()=\"Liste des commandes\"]");
+    public static By xpathCartLivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[4]");
     public static By logoutlivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[6]");
     public static By Xpath_confirmerLivraison=By.xpath("//*[text()=\"Confirmer\"]");
     public static By xpathPopUpConfirmLivraison=By.xpath("//*[text()=\"Êtes-vous sûr ?\"]");
@@ -62,12 +69,30 @@ public class Project_Xpath {
 
     public static By xpathokafteracceptlivraison=By.xpath("/html/body/div/div/div[6]/button[1]");
     //public static By xpathCartLivreur=By.xpath("");
+    public static By Xpath_Next=By.xpath("//*[text()=\"Next\"]");
+    public static By XpathdashlivreurButton=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[1]");
+
+    public static By xpathEditProfileLivreur=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[5]");
+    public static By AppearingOfNotification=By.xpath("//*[@id=\"app\"]/div[2]/div/div/div[2]/div/div/label[1]/span");
+    public static By XpathEditProfile=By.xpath("//*[text()=\"Edit\"]");
+    public static By xpathAdressinput=By.xpath("//*[@id=\"app\"]/div[2]/div/div/div[2]/div/div/div/section[2]/form/div[4]/div/input");
+    public static By XpathSaveUpdateProfile =By.xpath("//*[text()=\"Save Changes\"]");
+    public static By XpathSuccessUpdateProfile=By.xpath("//*[text()=\"Profile updated successfully\"]");
+    public static By xpathOKUpdateProfil=By.xpath("//*[text()=\"OK\"]");
+    public static By xpathPasswordInput=By.xpath("//*[@id=\"app\"]/div[2]/div/div/div[2]/div/div/div/section[2]/form/div[5]/div/input");
+
+
     //********************Client Process********************************************
+
     public static By xpathcommandes=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[2]");
     public static By xpathcommandesclient=By.xpath("//*[text()=\"Liste des commandes\"]");
     public static By Xpath_historiqueclient=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[3]");
 
     public static By xpathHistoriqueclient=By.xpath("//*[text()=\"Liste des commandes\"]");
     public static By logoutClient=By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[5]");
+
+//***********************************************************
+    public static By xpathNextPage=By.xpath("//*[text()=\"Next\"]");
+
 
 }
