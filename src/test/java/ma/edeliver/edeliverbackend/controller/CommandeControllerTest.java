@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -167,4 +168,21 @@ public class CommandeControllerTest {
                 .andExpect(jsonPath("$[0].statut").value("Commande 1"))
                 .andExpect(jsonPath("$[1].statut").value("Commande 2"));
     }
+
+    @Test
+    public void testSearchCommandesWithNoParams() throws Exception {
+        when(commandeService.searchCommandes(null, null, null)).thenReturn(Collections.emptyList());
+        mockMvc.perform(get("/api/commandes/search"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(0));
+    }
+
+    @Test
+    public void testSearchCommandesWithInvalidParams() throws Exception {
+        when(commandeService.searchCommandes("invalid address", null, null)).thenReturn(Collections.emptyList());
+        mockMvc.perform(get("/api/commandes/search?address=invalid address"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(0));
+    }
+
 }
