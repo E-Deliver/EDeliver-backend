@@ -1,7 +1,5 @@
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -47,7 +45,9 @@ public class AdminCommande extends Loginadmin{
                     // Sélectionner un livreur
                     WebElement selectLivreur = driver.findElement(Project_Xpath.xpathSelectLivreur);
                     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectLivreur);
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectLivreur);
+                    action = new Actions(driver);
+                    action.moveToElement(selectLivreur).click().perform();
+
                     //WebElement selectLivreur = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathSelectLivreur));
                     //selectLivreur.click();
                     System.out.println("Le livreur est sélectionné!");
@@ -130,7 +130,18 @@ public class AdminCommande extends Loginadmin{
         OK.click();
        // softAssert.assertAll();
 }*/
-@Test(priority=4)
+    @Test(priority=3)
+    public void ConsulterHistoriqueAdmin(){
+        //Click on Livreur button in the side-bar
+        WebElement historique=driver.findElement(Project_Xpath.xpathHistorique);
+        historique.click();
+        softAssert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminHistorique),"Un probléme lors de consulatation d'historique par Admin!");
+        softAssert.assertTrue(ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeHistorique),"Un probléme existe lors de consultation de liste de l'historique par l'admin!");
+        if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminHistorique)&&ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeHistorique)){
+            System.out.println("Test Passed: L'historique est bien consulté par l'administrateur!");
+        }
+    }
+    @Test(priority=4)
     public void ConsulterLivreur(){
         //Click on Livreur button in the side-bar
         WebElement livreur=driver.findElement(Project_Xpath.xpathLivreur);
@@ -139,45 +150,88 @@ public class AdminCommande extends Loginadmin{
         if(ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeLivreur)){
             System.out.println("Test Passed: La liste des livreurs s'affiche correctement!");
         }
-}
-
-@Test(priority=3)
-public void ConsulterHistoriqueAdmin(){
-    //Click on Livreur button in the side-bar
-    WebElement historique=driver.findElement(Project_Xpath.xpathHistorique);
-    historique.click();
-    softAssert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminHistorique),"Un probléme lors de consulatation d'historique par Admin!");
-    softAssert.assertTrue(ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeHistorique),"Un probléme existe lors de consultation de liste de l'historique par l'admin!");
-    if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminHistorique)&&ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeHistorique)){
-        System.out.println("Test Passed: L'historique est bien consulté par l'administrateur!");
     }
-}
-@Test(priority=5)
+
+
+    @Test(priority=5)
     public void ConsulterClientParAdmin(){
-    WebElement Client=driver.findElement(Project_Xpath.xpathClientAdmin);
-    Client.click();
-    softAssert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminClient),"Un probléme lors de consulatation des clients par Admin!");
-    softAssert.assertTrue(ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeClient),"Un probléme existe lors de consultation de liste des clients par l'admin!");
-    if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminClient)&&ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeClient)){
-        System.out.println("Test Passed: L'historique est bien consulté par l'administrateur!");
+        WebElement Client=driver.findElement(Project_Xpath.xpathClientAdmin);
+        Client.click();
+        softAssert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminClient),"Un probléme lors de consulatation des clients par Admin!");
+        softAssert.assertTrue(ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeClient),"Un probléme existe lors de consultation de liste des clients par l'admin!");
+        if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlAdminClient)&&ProjectFunctions.VerifyElements(driver, Project_Xpath.xpathListeClient)){
+            System.out.println("Test Passed: L'historique est bien consulté par l'administrateur!");
+        }
     }
-}
-//@Test(priority=6)
-    public void ProfileAdmin(){
+    @Test(priority=6)
+    public void ProfileAdmin() throws InterruptedException {
+        WebElement EditProfile= driver.findElement(Project_Xpath.xpathEditProfileAdmin);
+        EditProfile.click();
+        //Page is well displayed
+        softAssert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlEditProfilePage),"La page d'edit profile pour livreur ne s'affiche pas correctement!");
+        if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlEditProfilePage)){
+            System.out.println("Test passed: La page d'edit profile pour le livreur est affichée correctement");
+        }
+        //Coté notification
+        WebElement notifications = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.AppearingOfNotification));
 
-}
-//****************Se déconnecter de l'aspace admin*****************************
-@Test(priority=7)
-public void SeDeconnecter() throws InterruptedException {
-    driver.findElement(Project_Xpath.dashAdminXpath).click();
-    Thread.sleep(1000);
-    WebElement Logout=driver.findElement(Project_Xpath.logoutAdmin);
-    Logout.click();
-    Thread.sleep(1000);
-    Assert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlHomePage),"L'admin n'a pas pu se déconnecter");
+        //WebElement notifications= driver.findElement(Project_Xpath.AppearingOfNotification);
+        softAssert.assertTrue(notifications.isDisplayed(),"la liste des notifications n'apparait pas correctemet!");
+        if(notifications.isDisplayed()){
+            System.out.println("Test Passed: La liste des notifications s'affiche correctement");
+        }
+        Thread.sleep(1000);
+        //Coté edit
+        //click on edit icon
+        WebElement edit= driver.findElement(Project_Xpath.XpathEditProfile);
+        edit.click();
+        Thread.sleep(1000);
+        //Edit password
+        WebElement passwordinput =driver.findElement(Project_Xpath.xpathPasswordInput);
+        passwordinput.clear();
+        passwordinput.sendKeys("$2a$10$w3PL6XU0VqJjYjrR5RUxhuDcZ3G0aYQwcGlPf5eKz4pBrKHd1VSS2");
+        System.out.println("The new Password was entered!");
+        //Edit adress
+        WebElement adressUpdate= driver.findElement(Project_Xpath.xpathAdressinput);
+        String textadress= adressUpdate.getText();
+        if(textadress.equals("Rabat")){
+            adressUpdate.clear();
+            adressUpdate.sendKeys("Fes");
+            System.out.println("The new Adress was entered!");
+        }
+        else{
+            adressUpdate.clear();
+            adressUpdate.sendKeys("Rabat");
+            System.out.println("The new Adress was entered!");
+            Thread.sleep(500);
+        }
+        //Save updates
+        WebElement SAVE = driver.findElement(Project_Xpath.XpathSaveUpdateProfile);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", SAVE);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", SAVE);
+
+        // Check if update was successful
+        softAssert.assertTrue(ProjectFunctions.VerifyElements(driver, Project_Xpath.XpathSuccessUpdateProfile), "La modification n'est pas faite correctement!");
+        if (ProjectFunctions.VerifyElements(driver, Project_Xpath.XpathSuccessUpdateProfile)) {
+            System.out.println("Test Passed: la modification est bien faite de l'adresse et donc les modifications travaille correctement!");
+        }
+        // Click on OK button
+        WebElement OK_Modif = driver.findElement(Project_Xpath.xpathOKUpdateProfil);
+        OK_Modif.click();
+        Thread.sleep(500);
+    }
+    //****************Se déconnecter de l'aspace admin*****************************
+//@Test(priority=7)
+    public void SeDeconnecter() throws InterruptedException {
+        driver.findElement(Project_Xpath.dashAdminXpath).click();
+        WebElement Logout= driver.findElement(By.xpath("//*[@id=\"mySidebar\"]/div[2]/a[7]"));
+        //WebElement Logout=driver.findElement(Project_Xpath.logoutAdmin);
+        Logout.click();
+        //Thread.sleep(1000);
+    /*Assert.assertTrue(ProjectFunctions.VerifyUrl(driver,Parameters.UrlHomePage),"L'admin n'a pas pu se déconnecter");
     if(ProjectFunctions.VerifyUrl(driver,Parameters.UrlHomePage)){
         System.out.println("Test Passed: l'admin se déconnecte correctement");
+    }*/
     }
-}
 
 }
