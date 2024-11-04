@@ -19,5 +19,6 @@ public class Parameters {
     public static String UrlLivreurCart="http://localhost:4200/map";
     //************Edit Profil****************************
     public static String UrlEditProfilePage="http://localhost:4200/profile";
+    public static String UrlEditProfileClientPage="http://localhost:4200/profileClient";
 
 }
