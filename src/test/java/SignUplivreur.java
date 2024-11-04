@@ -14,11 +14,11 @@ public class SignUplivreur extends TestBase {
         signup.click();
         //Wait for until the signup form be appeared
         WebElement nom = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathnom));
-        nom.sendKeys("livreur2");
+        nom.sendKeys("livreur4");
         WebElement adresse = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathAdresse));
         adresse.sendKeys("Rabat");
         WebElement email = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathEmailLivreur));
-        email.sendKeys("livreur2@gmail.com");
+        email.sendKeys("livreur4@gmail.com");
         WebElement pwd = wait.until(ExpectedConditions.visibilityOfElementLocated(Project_Xpath.xpathmdp));
         pwd.sendKeys("test");
 
